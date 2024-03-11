@@ -1,0 +1,23 @@
+pipeline {
+agent { label 'master' }
+
+tools {
+    jdk 'java'
+    maven 'maven'
+}
+
+stages {
+    stage ('git checkout') {
+        steps {
+            git branch:'main' ,
+            url: 'https://github.com/reenashailey/helloworld-project-1.git'
+        }
+    }
+stage ('maven build'){
+    steps {
+        sh 'mvn clean package'
+    }
+}
+}
+}
+
