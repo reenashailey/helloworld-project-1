@@ -1,5 +1,5 @@
 FROM tomcat:8.0-alpine
-LABEL maintainer="chinniprashanth"
+LABEL maintainer="reenashailey"
 ADD target/hello-world-war-1.0.0.war /usr/local/tomcat/webapps/
 EXPOSE 9191
 CMD ["catalina.sh", "run"]
